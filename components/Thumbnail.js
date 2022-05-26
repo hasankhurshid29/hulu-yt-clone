@@ -3,6 +3,7 @@ import Image from "next/image"
 import { forwardRef } from 'react'
 
 const Thumbnail = forwardRef(({ result }, ref) => {
+  const ref = createRef();
   const BASE_URL = "https://image.tmdb.org/t/p/original/"
   return (
     <div
