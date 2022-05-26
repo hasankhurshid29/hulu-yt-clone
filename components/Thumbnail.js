@@ -3,7 +3,10 @@ import Image from "next/image"
 import { forwardRef } from 'react'
 
 const Thumbnail = forwardRef(({ result }, ref) => {
-  const BASE_URL = "https://image.tmdb.org/t/p/original/"
+  const BASE_URL = "https://image.tmdb.org/t/p/original/";
+  const loaderProp =({ src }) => {
+    return src;
+  }
   return (
     <div
       ref={ref}
@@ -16,6 +19,7 @@ const Thumbnail = forwardRef(({ result }, ref) => {
       `}
         height={1080}
         width={1920}
+        loader={loaderProp}
       />
       <div className='p-2'>
         <p className='text-white truncate max-w-md'>{result.overview}</p>
